@@ -1,7 +1,5 @@
 package com.chen.utils;
 
-import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 统一返回客户端 数据格式

@@ -12,7 +12,7 @@ import com.chen.pay.impl.WechatPay;
  **/
 public class PayFactory {
 
-    public PaymentMethod pay(String payType){
+    public PaymentMethod getPayment(String payType){
 
         switch (payType){
 
