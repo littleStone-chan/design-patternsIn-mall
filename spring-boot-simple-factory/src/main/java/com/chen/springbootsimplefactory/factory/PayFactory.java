@@ -7,6 +7,8 @@ import com.chen.springbootsimplefactory.pay.impl.WechatPay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 /**
  * @description:支付工厂
  * @author: Chen
@@ -22,23 +24,27 @@ public class PayFactory {
     @Autowired
     private WechatPay wechatPay;
 
+    @Autowired
+    private Map<String,PaymentMethod> paymentMethodMap;
+
     public PaymentMethod pay(String payType){
 
-        switch (payType){
+        //写法一
+//        switch (payType){
+//
+//            case "balancePay":
+//                return balancePay;
+//            case "alipay":
+//                return alipay;
+//            case "wechatPay":
+//                return wechatPay;
+//
+//            default:
+//                System.out.println("支付方式错误");
+//        }
 
-            case "balancePay":
-                return balancePay;
-            case "alipay":
-                return alipay;
-            case "wechatPay":
-                return wechatPay;
-
-            default:
-                System.out.println("支付方式错误");
-
-        }
-        return null;
-
+        //写法二
+        return paymentMethodMap.get(payType);
     }
 
 }
