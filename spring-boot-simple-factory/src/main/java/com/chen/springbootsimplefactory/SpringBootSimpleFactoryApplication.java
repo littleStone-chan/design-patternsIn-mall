@@ -15,7 +15,7 @@ public class SpringBootSimpleFactoryApplication {
 //        for (String bean:beans) {
 //            System.out.println("bean:"+bean);
 //        }
-
+        //然而在实际开发中，是不可能经常通过context获取bean的
         PaymentMethod paymentMethod = (PaymentMethod) context.getBean("alipay");
         paymentMethod.pay();
     }

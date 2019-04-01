@@ -14,7 +14,7 @@ public class Main {
 
         PayFactory payFactory = new PayFactory();
 
-        PaymentMethod paymentMethod = payFactory.pay("alipay");
+        PaymentMethod paymentMethod = payFactory.getPayment("alipay");
 
         paymentMethod.pay();
 
