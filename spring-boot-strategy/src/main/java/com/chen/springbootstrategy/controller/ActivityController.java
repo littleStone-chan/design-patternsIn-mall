@@ -4,6 +4,7 @@ import com.chen.springbootstrategy.activity.GoodsActivity;
 import com.chen.springbootstrategy.activity.impl.DiscountActivity;
 import com.chen.springbootstrategy.activity.impl.FullReduceActivity;
 import com.chen.springbootstrategy.activity.impl.IntegralActivity;
+import com.chen.springbootstrategy.factory.GoodsActivityStrategyFactory;
 import com.chen.springbootstrategy.strategy.GoodsActivityContext;
 import com.chen.springbootstrategy.utils.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,9 @@ public class ActivityController{
 
     @Autowired
     private IntegralActivity integralActivity;
+
+    @Autowired
+    private GoodsActivityStrategyFactory goodsActivityStrategyFactory;
 
     /**
      * 获取最终售价
@@ -72,6 +76,29 @@ public class ActivityController{
                 responseResult.setMsg("数据类型错误");
                 responseResult.setData(null);
                 return responseResult;
+        }
+
+        responseResult.setCode(0);
+        responseResult.setMsg("操作成功");
+        responseResult.setData(goodsActivityContext.getPrice(amount));
+
+        return responseResult;
+    }
+
+
+    @RequestMapping("getLastPrice_V2")
+    public ResponseResult getLastPrice_V2(String activityType,BigDecimal amount){
+
+
+        ResponseResult responseResult = ResponseResult.getInstance();
+        //从工厂中获取  活动策略
+        GoodsActivityContext goodsActivityContext = goodsActivityStrategyFactory.getGoodsActivityStrategy(activityType);
+
+        if (goodsActivityContext==null){
+            responseResult.setCode(1);
+            responseResult.setData(null);
+            responseResult.setMsg("数据类型错误");
+            return responseResult;
         }
 
         responseResult.setCode(0);
