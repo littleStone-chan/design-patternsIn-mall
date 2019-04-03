@@ -20,6 +20,31 @@ public class ResponseResult{
         return instance;
     }
 
+    /**
+     * 操作成功时 调用此构造方法
+     * @param msg
+     * @param data
+     * @return
+     */
+    public static ResponseResult success(String msg,Object data){
+        instance.setData(data);
+        instance.setCode(0);
+        instance.setMsg(msg);
+        return instance;
+    }
+
+    /**
+     * 操作失败时 调用此构造方法
+     * @param msg
+     * @return
+     */
+    public static ResponseResult fail(String msg){
+        instance.setData(null);
+        instance.setCode(0);
+        instance.setMsg(msg);
+        return instance;
+    }
+
     //返回给客户端的数据说明
     private String msg;
 
