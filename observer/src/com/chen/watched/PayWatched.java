@@ -14,6 +14,7 @@ public class PayWatched extends Observable {
 
     @Override
     public void notifyObservers() {
+        System.out.println("有人下单啦");
         setChanged();
         super.notifyObservers();
     }

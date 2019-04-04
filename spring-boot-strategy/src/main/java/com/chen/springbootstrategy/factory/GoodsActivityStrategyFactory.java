@@ -2,7 +2,6 @@ package com.chen.springbootstrategy.factory;
 
 import com.chen.springbootstrategy.activity.GoodsActivity;
 import com.chen.springbootstrategy.strategy.GoodsActivityContext;
-import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

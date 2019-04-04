@@ -16,10 +16,9 @@ public class ObserverMain {
 
         PayWatched payWatched = new PayWatched();
 
-        CommissionObserver commissionObserver = new CommissionObserver(payWatched);
-        MsgObserver msgObserver = new MsgObserver(payWatched);
-        OrderObserver orderObserver = new OrderObserver(payWatched);
-
+        new CommissionObserver(payWatched);
+        new MsgObserver(payWatched);
+        new OrderObserver(payWatched);
 
         payWatched.notifyObservers();
     }
