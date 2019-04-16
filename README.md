@@ -12,7 +12,7 @@
 3、策略模式  
 场景：商城活动中有几种，满减，打折，送积分....
    * 基础篇：[简单的使用策略模式](https://www.cnblogs.com/boychen/p/10714192.html)
-   * 进阶篇：在springboot中使用策略模式
+   * 进阶篇：[在springboot中使用策略模式](https://www.cnblogs.com/boychen/p/10721078.html)
    
 4、观察者模式
 场景：当用户下单成功后，要执行 修改订单状态，分佣，通知店主发货
