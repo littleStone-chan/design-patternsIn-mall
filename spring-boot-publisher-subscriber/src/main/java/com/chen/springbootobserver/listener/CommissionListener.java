@@ -18,6 +18,6 @@ public class CommissionListener implements ApplicationListener {
         if (event instanceof PayEvent){
             System.out.println("有人下单，开始分佣啦");
         }
-        System.out.println("收到广播：MsgListener");
+        System.out.println("收到广播：CommissionListener");
     }
 }

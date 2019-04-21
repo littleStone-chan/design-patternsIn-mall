@@ -5,15 +5,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.stereotype.Component;
-import sun.plugin2.message.GetAppletMessage;
 
 /**
- * @description:
+ * @description:事件发布者
  * @author: Chen
  * @create: 2019-04-21 10:28
  **/
 @Component
-public class PayPublisher implements ApplicationContextAware {
+public class EventPublisher implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
