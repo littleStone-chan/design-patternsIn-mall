@@ -1,23 +1,22 @@
 package com.chen.springbootobserver.listener;
 
-
 import com.chen.springbootobserver.event.PayEvent;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 /**
- * @description:信息监听器
+ * @description:佣金监听器
  * @author: Chen
- * @create: 2019-04-21 09:57
+ * @create: 2019-04-21 23:50
  **/
 @Component
-public class MsgListener  implements ApplicationListener {
+public class CommissionListener implements ApplicationListener {
 
     @Override
-    public void onApplicationEvent(ApplicationEvent applicationEvent) {
-        if (applicationEvent instanceof PayEvent){
-            System.out.println("通知管理员，有人下单了");
+    public void onApplicationEvent(ApplicationEvent event) {
+        if (event instanceof PayEvent){
+            System.out.println("有人下单，开始分佣啦");
         }
         System.out.println("收到广播：MsgListener");
     }

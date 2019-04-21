@@ -24,7 +24,6 @@ public class PayPublisher implements ApplicationContextAware {
     }
 
     public void publishEvent(ApplicationEvent event){
-        System.out.println("into My Publisher's method");
         applicationContext.publishEvent(event);
     }
 }

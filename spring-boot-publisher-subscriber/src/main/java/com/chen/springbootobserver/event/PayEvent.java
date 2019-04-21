@@ -3,13 +3,13 @@ package com.chen.springbootobserver.event;
 import org.springframework.context.ApplicationEvent;
 
 /**
- * @description:
+ * @description:支付事件，有人支付了订单
  * @author: Chen
  * @create: 2019-04-21 10:26
  **/
-public class MsgEvent extends ApplicationEvent {
+public class PayEvent extends ApplicationEvent {
 
-    public MsgEvent(Object source) {
+    public PayEvent(Object source) {
         super(source);
         System.out.println("MsgEvent:"+source.toString());
     }
