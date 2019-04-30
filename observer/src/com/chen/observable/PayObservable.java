@@ -1,4 +1,4 @@
-package com.chen.watched;
+package com.chen.observable;
 
 
 import java.util.Observable;
@@ -8,7 +8,7 @@ import java.util.Observable;
  * @author: Chen
  * @create: 2019-04-03 23:01
  **/
-public class PayWatched extends Observable {
+public class PayObservable extends Observable {
 
 
 
