@@ -25,7 +25,7 @@ public class DiscountActivityDecorator extends GoodsActivityDecorator {
 
     @Override
     public BigDecimal getPayPrice() {
-        return goodsActivity.getPayPrice().multiply(new BigDecimal(discount*0.1));
+        return goodsActivity.getPayPrice().multiply(new BigDecimal(discount)).multiply(new BigDecimal("0.1"));
     }
 
 }

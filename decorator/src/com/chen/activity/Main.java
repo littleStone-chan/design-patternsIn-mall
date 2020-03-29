@@ -1,6 +1,7 @@
 package com.chen.activity;
 
 import com.chen.activity.decorator.activity.DiscountActivityDecorator;
+import com.chen.activity.decorator.activity.IntegralActivityDecorator;
 import com.chen.activity.impl.GoodsActivityImpl;
 
 import java.math.BigDecimal;
@@ -16,6 +17,7 @@ public class Main {
         GoodsActivity goodsActivity = new GoodsActivityImpl(new BigDecimal(100));
 
         goodsActivity = new DiscountActivityDecorator(goodsActivity);
+        goodsActivity = new IntegralActivityDecorator(goodsActivity);
         System.out.println(goodsActivity.getPayPrice());
     }
 
